@@ -1,0 +1,14 @@
+process:
+  php:
+    running: true
+file:
+  /usr/local/bin/composer:
+    exists: true
+    mode: "0755"
+    owner: root
+    group: root
+  /root/.composer/vendor/bin/psysh:
+    exists: true
+    mode: "0777"
+    owner: root
+    group: root
