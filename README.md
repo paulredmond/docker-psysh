@@ -8,7 +8,10 @@ A REPL for PHP using [PsySH](https://psysh.org/).
 
 ```
 # Run REPL
-docker run --rm -it paulredmond/psysh-repl:7.4
+docker run --rm -it paulredmond/psysh:7.4
+
+# Pull the latest and then run
+docker pull paulredmond/psysh:7.4 && docker run --rm -it paulredmond/psysh:7.4
 
 # Peek around inside
 docker run --rm -it --entrypoint=bash paulredmond/psysh-repl:7.4
