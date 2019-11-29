@@ -2,12 +2,7 @@ services:
   - docker
 
 before_install:
-  - curl -L https://github.com/aelsabbahy/goss/releases/download/v0.3.8/goss-linux-amd64 -o ./goss
-  - chmod +rx ./goss
-  - curl -L https://raw.githubusercontent.com/aelsabbahy/goss/v0.3.8/extras/dgoss/dgoss -o ./dgoss
-  - chmod +rx ./dgoss
-  - pwd
-  - ls -la ./goss ./dgoss
+  - bin/setup.sh
 
 script: bin/test.sh
 
