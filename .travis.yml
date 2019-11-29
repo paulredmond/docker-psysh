@@ -6,6 +6,8 @@ before_install:
 
 script: bin/test.sh
 
-after_success:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push paulredmond/psysh:7.4
+deploy:
+  provider: script
+  script: bin/deploy.sh
+  on:
+    branch: master
