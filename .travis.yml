@@ -1,0 +1,14 @@
+services:
+  - docker
+
+before_install:
+  - curl -L https://github.com/aelsabbahy/goss/releases/download/v0.3.8/goss-linux-amd64 -o ./goss
+  - chmod +rx ./goss
+  - curl -L https://raw.githubusercontent.com/aelsabbahy/goss/v0.3.8/extras/dgoss/dgoss -o ./dgoss
+  - chmod +rx ./dgoss
+
+script: bin/test.sh
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push paulredmond/psysh:7.4
