@@ -1,6 +1,11 @@
 process:
   php:
     running: true
+command:
+  "/root/.composer/vendor/bin/psysh --version":
+    exit-status: 0
+    stdout:
+      - /Psy Shell v\d+\.9.\d+ \(PHP 7.4.\d+ — cli\)/
 file:
   /usr/local/bin/composer:
     exists: true
